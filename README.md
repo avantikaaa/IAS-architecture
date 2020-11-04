@@ -27,5 +27,5 @@
 		* Each line uses updated memory values
 
 
-##OUTPUT: "IMT2019013_memory_output.txt"
+## OUTPUT: "IMT2019013_memory_output.txt"
 	- The file contains the altered memory after the given set of instructions are executed
