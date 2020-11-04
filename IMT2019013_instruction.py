@@ -1,0 +1,32 @@
+from IMT2019013_dataTransfer import *
+from IMT2019013_jump import *
+from IMT2019013_arithmetic import *
+from IMT2019013_addressModify import *
+
+def HALT(memory):
+	memory["halt"] = 1
+	memory["IBR"] = ""
+
+def instruction(opcode):
+	return {"00000000": HALT,
+	"00001010": LOADMQ,
+	"00001001": LOADMX_MQ,
+	"00100001": STORMX,
+	"00000001": LOADMX,
+	"00000010": LOADMX_NEG,
+	"00000011": LOADMX_MOD,
+	"00000100": LOADMX_MOD_NEG,
+	"00001101": JUMP_LHS,
+	"00001110": JUMP_RHS,
+	"00001111": JUMP_CON_LHS,
+	"00010000": JUMP_CON_RHS,
+	"00000101": ADDMX,
+	"00000111": ADDMX_MOD,
+	"00000110": SUBMX,
+	"00001000": SUBMX_MOD,
+	"00001011": MULMX,
+	"00001100": DIVMX,
+	"00010100": LSH,
+	"00010101": RSH,
+	"00010010": STOR_LHS,
+	"00010011": STOR_RHS}[opcode]
